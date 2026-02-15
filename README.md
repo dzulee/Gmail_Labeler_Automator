@@ -1,4 +1,9 @@
+
 # 🤖 AI-Powered Gmail Workflow (Zero-Shot Classifier)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![HuggingFace](https://img.shields.io/badge/%F0%9F%A4%97-Transformers-orange)](https://huggingface.co/facebook/bart-large-mnli)
 
 An intelligent, autonomous email automation workflow that categorizes unread Gmail messages using Natural Language Processing. Unlike traditional rule-based filters, this project uses the **BART Large MNLI** model to "understand" the context of your emails and label them dynamically.
 
@@ -20,18 +25,7 @@ An intelligent, autonomous email automation workflow that categorizes unread Gma
 ├── .gitignore          # Prevents sensitive tokens from being pushed to GitHub
 ├── requirements.txt    # List of necessary Python libraries
 └── README.md           # Project documentation
-## 🛠️ Installation
-
-## 1. **Clone the repo:**
-     ```bash
-     git clone [https://github.com/your-username/your-repo-name.git](https://github.com/your-username/your-repo-name.git)
-     cd your-repo-name
-## 2. **Setup Virtual Environment:**
-    python -m venv venv
-    source venv/bin/activate  # On Windows: .\venv\Scripts\activate
-    pip install -r requirements.txt
-
-## 🔧 Setup & Installation
+🔧 Setup & Installation
 1. Prerequisites
 Python 3.8+
 
@@ -40,70 +34,46 @@ A Google Cloud Project with the Gmail API enabled.
 credentials.json downloaded from the Google Cloud Console.
 
 2. Installation
-   # Clone the repository
-    git clone [https://github.com/yourusername/gmail-ai-classifier.git](https://github.com/yourusername/gmail-ai-classifier.git)
-    cd gmail-ai-classifier
+Bash
+# Clone the repository
+git clone [https://github.com/your-username/Gmail_labeler_Automator.git](https://github.com/your-username/Gmail_labeler_Automator.git)
+cd Gmail_labeler_Automator
 
-    # Create and activate a virtual environment
-    python -m venv venv
-    # Windows:
-    .\venv\Scripts\activate
-    # Mac/Linux:
-    source venv/bin/activate
-    
-    # Install dependencies
-    pip install -r requirements.txt
+# Create and activate a virtual environment
+python -m venv venv
 
+# Windows:
+.\venv\Scripts\activate
+# Mac/Linux:
+source venv/bin/activate
 
-### 3. **Google API Setup:**
+# Install dependencies
+pip install -r requirements.txt
+3. Google API Setup
+Enable the Gmail API in your Google Cloud Console.
 
-    Enable the Gmail API in Google Cloud Console.
-    
-    Download credentials.json to the root folder.
-    
-    Run a local auth script once to generate token.json.
+Download your OAuth client credentials.json to the root folder.
 
-### 4. 🚀 Usage
-      Run the script manually:
-      
-      Bash
-      python automation.py
-      Or run as a background service:
-      
-      Bash
-      pythonw automation.pyw
-### 5. 📝 Configuration
-    Update the MY_LABELS list in automation.py to customize your categories:
-    
-    Python
-    MY_LABELS = ["Auto/Work", "Auto/Finance", "Auto/Travel"]
-    
-    ---
+Run the local auth script once to generate token.json:
 
-### 6. Generate a `requirements.txt`
-GitHub users expect this file so they know what to install. Run this in your terminal:
-    ```bash
-    pip freeze > requirements.txt
+Bash
+python auth.py
+🤖 Usage
+Run the script manually:
 
-### 🛡️ Security Note
-This project uses .gitignore to ensure that credentials.json and token.json are never uploaded to GitHub. Always keep these files private as they grant access to your Gmail account.
----
+Bash
+python automation.py
+Run as a background service (Windows):
 
-### 🛡️ Final Check: Your `.gitignore`
-Make sure you have a file named `.gitignore` in the same folder. If you don't, GitHub will accidentally upload your private keys. Use this content:
+Bash
+pythonw automation.pyw
+📝 Configuration
+Update the MY_LABELS list in automation.py to customize your categories:
 
-```text
-# Local credentials
-credentials.json
-token.json
-
-# Environment
-venv/
-__pycache__/
-.cache/
-
-# Logs
-automation_log.txt
+Python
+MY_LABELS = ["Auto/Work", "Auto/Finance", "Auto/Travel", "Auto/Social"]
+🛡️ Security Note
+This project uses .gitignore to ensure that credentials.json and token.json are never uploaded to GitHub. Always keep these files private as they grant full access to your Gmail account.
 
 📄 License
 MIT License - feel free to use and modify for your own workflows!
