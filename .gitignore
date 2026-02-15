@@ -1,0 +1,12 @@
+# Sensitive Google Auth files
+credentials.json
+token.json
+
+# Python environment and logs
+venv/
+__pycache__/
+automation_log.txt
+*.pyc
+
+# Large AI models (cached locally)
+.cache/
